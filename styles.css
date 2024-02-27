@@ -2,8 +2,9 @@
   --neutral: #232946;
   --base-color: #fffffe;
   --neutral-focus: #121629;
-  --secondary-color: #eebbc3;
-
+  --primary: #eebbc3;
+  --secondary: #b8c1ec;
+  --accent: #b8c1ec;
 }
 
 * {
@@ -70,8 +71,65 @@ section {
 }
 
 #welcome-section p {
-  color: var(--secondary-color);
+  color: var(--primary);
   font-size: 25px;
   margin: 25px 0;
   font-style: italic;
+}
+
+#projects .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  place-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#projects {
+  background-color: var(--secondary);
+  color: var(--neutral)
+}
+
+#projects h1 {
+  border-bottom: 5px solid var(--neutral);
+  width: fit-content;
+  margin: auto;
+}
+
+#projects .project-tile {
+  height: 525px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral);
+  color: var(--accent);
+  border-radius: 5px;
+  box-shadow: 8px 8px 10px 5px rgba(100, 100, 100, 0.3);
+  text-decoration: none;
+}
+
+#projects .project-tile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#projects .project-tile p {
+  font-size: 25px;
+  padding: 10px;
+}
+
+#projects .project-tile span {
+  opacity: 0%;
+  padding: 0 5px;
+}
+
+#projects .project-tile:hover span {
+  opacity: 100%;
+  color: var(--primary);
+  transition: opacity 0.25s ease-in;
 }
